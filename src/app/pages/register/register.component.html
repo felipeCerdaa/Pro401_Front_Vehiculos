@@ -42,6 +42,9 @@
           errorText="Contraseña es requerida, debe tener al menos 8 caracteres y debe contener al menos una letra mayúscula, una letra minúscula y un número"
           placeholder="Repita su Contraseña">
         </ion-input> 
+        <div *ngIf="registerForm.errors?.['passwordMismatch']">
+          <ion-text color="danger">Las contraseñas no coinciden</ion-text>
+        </div>
         <br>
         <ion-button
         type="submit"

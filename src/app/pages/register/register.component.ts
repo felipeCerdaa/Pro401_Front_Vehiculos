@@ -1,8 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AccordionGroupChangeEventDetail } from '@ionic/angular';
 import { AccountService } from 'src/app/services/account.service';
+
+export function matchPasswordValidator(passwordKey : string, confirmPasswordKey : string) : ValidatorFn{
+  return (control : AbstractControl) : {[key : string] : any} | null => {
+
+    const password = control.get(passwordKey)?.value;
+    const confirmPassword = control.get(confirmPasswordKey)?.value;
+    return password === confirmPassword ? null : {passwordMismatch : true};
+  }
+}
 
 @Component({
   selector: 'app-register',
@@ -16,7 +24,9 @@ export class RegisterComponent  implements OnInit {
   registerForm = this.fb.group({
     email : new FormControl('', [Validators.required,Validators.email]),
     password : new FormControl('', [Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*#?&]{8,}$')]),
-    confirmPassword : new FormControl('',)
+    confirmPassword : new FormControl('')
+  },{
+    validator : matchPasswordValidator('password', 'confirmPassword')
   })
 
   ngOnInit() {}
