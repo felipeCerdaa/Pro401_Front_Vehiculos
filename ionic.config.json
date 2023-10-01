@@ -1,0 +1,7 @@
+{
+  "name": "Pro401_Front_Vehiculos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
