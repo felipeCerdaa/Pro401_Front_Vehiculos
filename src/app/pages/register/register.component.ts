@@ -24,9 +24,17 @@ export class RegisterComponent  implements OnInit {
   registerForm = this.fb.group({
     email : new FormControl('', [Validators.required,Validators.email]),
     password : new FormControl('', [Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*#?&]{8,}$')]),
-    confirmPassword : new FormControl('')
-  },{
-    validator : matchPasswordValidator('password', 'confirmPassword')
+    confirmPassword : new FormControl(''),
+    rut : new FormControl('', [Validators.required, Validators.pattern('^[0-9]+-[0-9kK]{1}$')]),
+    nombres : new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+    apellidos : new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+    fechaNacimiento : new FormControl('', [Validators.required]),
+    ocupacion : new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+    comunaTrabajo : new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+    comunaResidencia : new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+  },
+  {
+    validator : matchPasswordValidator('password', 'confirmPassword'),
   })
 
   ngOnInit() {}
