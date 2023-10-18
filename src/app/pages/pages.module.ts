@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncuestaComponent } from './encuesta/encuesta.component';
+import { RecuperacionComponent } from './recuperacion/recuperacion.component';
+import { FinalizacionComponent } from './finalizacion/finalizacion.component';
 
 
 
@@ -12,7 +14,9 @@ import { EncuestaComponent } from './encuesta/encuesta.component';
   declarations: [
     RegisterComponent,
     LoginComponent,
-    EncuestaComponent
+    EncuestaComponent,
+    RecuperacionComponent,
+    FinalizacionComponent
   ],
   imports: [
     IonicModule,
