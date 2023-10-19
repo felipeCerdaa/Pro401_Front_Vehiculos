@@ -6,11 +6,17 @@ import { UserGuard } from './guards/user.guard';
 import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
 import { FinalizacionComponent } from './pages/finalizacion/finalizacion.component';
+import { LectorqrComponent } from './pages/lectorqr/lectorqr.component';
 
 const routes: Routes = [
   {
     path:'encuesta',
     component : EncuestaComponent
+
+  },
+  {
+    path:'lectorqr',
+    component : LectorqrComponent
 
   },
   {

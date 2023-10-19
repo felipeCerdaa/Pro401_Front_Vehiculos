@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { RecuperacionComponent } from './recuperacion/recuperacion.component';
 import { FinalizacionComponent } from './finalizacion/finalizacion.component';
+import { LectorqrComponent } from './lectorqr/lectorqr.component';
 
 
 
@@ -16,7 +17,8 @@ import { FinalizacionComponent } from './finalizacion/finalizacion.component';
     LoginComponent,
     EncuestaComponent,
     RecuperacionComponent,
-    FinalizacionComponent
+    FinalizacionComponent,
+    LectorqrComponent
   ],
   imports: [
     IonicModule,

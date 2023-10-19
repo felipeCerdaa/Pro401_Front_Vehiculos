@@ -29,6 +29,11 @@ export class LoginComponent  implements OnInit {
     //console.log("toRegister");
     this.router.navigate(["registro"]);
   }
+
+  toRecuperacion() {
+    this.router.navigate(["recuperacion"]);
+  }
+  
   
   submitLoginForm(){
     console.log("SubmitLoginForm");
