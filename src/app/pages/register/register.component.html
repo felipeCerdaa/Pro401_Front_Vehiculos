@@ -63,6 +63,7 @@
           placeholder="Ingresa tu Ocupacion">
         </ion-input>
         <br>
+
         <ion-list>
           <ion-item>
             <ion-select placeholder="Formato Trabajo">
@@ -72,8 +73,32 @@
             </ion-select>
           </ion-item>
         </ion-list>
+
         <br>
-        <ion-input 
+
+        <ion-list>
+          <ion-item>
+            <ion-select
+             aria-label="comunaResidencia" 
+             placeholder="Ingresa tu Comuna de Residencia" 
+             fill="outline">
+             <ion-select-option *ngFor="let valor of listaComunas">{{valor}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <ion-list>
+          <ion-item>
+            <ion-select 
+            aria-label="Comuna de Trabajo" 
+            placeholder="Ingresa tu Comuna de Trabajo" 
+            fill="outline">
+              <ion-select-option *ngFor="let valor of listaComunas">{{valor}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <!-- <ion-input 
           label="Comuna de Trabajo"
           type="text"
           label-placement="floating" 
@@ -81,9 +106,11 @@
           formControlName="comunaTrabajo"
           errorText="Ingresa tu Comuna de Trabajo"
           placeholder="Ingresa tu Comuna de Trabajo">
-        </ion-input>
+        </ion-input> -->
+
         <br>
-        <ion-input 
+
+        <!-- <ion-input 
           label="Comuna de Residencia"
           type="text"
           label-placement="floating" 
@@ -91,7 +118,8 @@
           formControlName="comunaResidencia"
           errorText="Ingresa tu Comuna de Residencia"
           placeholder="Ingresa tu Comuna de Residencia">
-        </ion-input>
+        </ion-input> -->
+
         <br>
         <ion-input 
           label="Email"

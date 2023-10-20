@@ -17,12 +17,13 @@
         <ion-list>
           <ion-item>
             <ion-select
-             aria-label="Publico/Privado" 
-             placeholder="Publico/Privado" 
+             aria-label="Publico / Privado" 
+             placeholder="Publico / Privado" 
              (ionChange)="handleChange($event)" 
              fill="outline">
-              <ion-select-option value="publico">Publico</ion-select-option>
-              <ion-select-option value="privado">Privado</ion-select-option>
+             <ion-select-option value="publico">Publico</ion-select-option>
+             <ion-select-option value="privadoSinCompartir">Privado Sin Compartir</ion-select-option>
+             <ion-select-option value="privadoCompartido">Privado Compartido</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
@@ -31,25 +32,24 @@
 
         <ion-list>
           <ion-item>
-            <ion-select 
+            <ion-select
 			      [disabled]="medioTransporteDisabled" 
 			      aria-label="Medio de Transporte" 
 			      placeholder="Medio de Transporte" 
 			      fill="outline">
-              <ion-select-option *ngFor="let valor of listaTransportes">{{valor}}</ion-select-option>
+            <ion-select-option *ngFor="let valor of listaTransportes">{{valor}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
 
         <br>
-
-            <ion-input 
-            label="KM"
-            type="number"
-            label-placement="floating" 
-            fill="outline"
-            placeholder="0">
-            </ion-input>
+        <ion-input 
+        label="KM"
+        type="number"
+        label-placement="floating" 
+        fill="outline"
+        placeholder="0">
+        </ion-input>
 
         <br>
 

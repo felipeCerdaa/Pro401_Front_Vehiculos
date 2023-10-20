@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class EncuestaComponent  implements OnInit {
   public medioTransporteDisabled: boolean = true;
   public listaTransportes: string[] = [];
-  public listaPublico: string[] = ["metro", "micro", "bus", "taxi", "uber"];
-  public listaPrivado: string[] = ["auto", "moto", "otro"];
+  public listaPublico: string[] = ["Metro", "Micro", "Bus", "Taxi", "Uber", "Colectivo"];
+  public listaPrivado: string[] = ["Auto", "Moto", "Otro"];
 
   constructor() { }
 
@@ -22,7 +22,11 @@ export class EncuestaComponent  implements OnInit {
       this.listaTransportes = this.listaPublico;
       this.medioTransporteDisabled =  false;
     }
-    else if(eValue == "privado"){
+    else if(eValue == "privadoSinCompartir"){
+      this.listaTransportes = this.listaPrivado;
+      this.medioTransporteDisabled =  false;
+    }
+    else if(eValue == "privadoCompartir"){
       this.listaTransportes = this.listaPrivado;
       this.medioTransporteDisabled =  false;
     }

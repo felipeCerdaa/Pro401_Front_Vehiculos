@@ -18,6 +18,8 @@ export function matchPasswordValidator(passwordKey : string, confirmPasswordKey 
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent  implements OnInit {
+  
+  public listaComunas: string[] = ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Santiago", "Vitacura"];
 
   constructor(private router : Router, private fb : FormBuilder, private accountService : AccountService) { }
 
@@ -38,6 +40,7 @@ export class RegisterComponent  implements OnInit {
   })
 
   ngOnInit() {}
+
 
   backToLogin(){
     this.router.navigate(["/"]);
