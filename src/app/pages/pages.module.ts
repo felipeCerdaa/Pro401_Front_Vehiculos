@@ -10,7 +10,6 @@ import { FinalizacionComponent } from './finalizacion/finalizacion.component';
 import { LectorqrComponent } from './lectorqr/lectorqr.component';
 
 
-
 @NgModule({
   declarations: [
     RegisterComponent,
