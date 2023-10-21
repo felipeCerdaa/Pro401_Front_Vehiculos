@@ -5,7 +5,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { UserGuard } from './guards/user.guard';
 import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
-import { FinalizacionComponent } from './pages/finalizacion/finalizacion.component';
+import { FinalComponent } from './pages/final/final.component';
 import { LectorqrComponent } from './pages/lectorqr/lectorqr.component';
 
 const routes: Routes = [
@@ -24,8 +24,8 @@ const routes: Routes = [
     component : RecuperacionComponent
   },
   {
-    path:'finalizacion',
-    component : FinalizacionComponent
+    path:'final',
+    component : FinalComponent
 
   },
   {

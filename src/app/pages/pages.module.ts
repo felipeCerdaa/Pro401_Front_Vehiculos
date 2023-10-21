@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { RecuperacionComponent } from './recuperacion/recuperacion.component';
-import { FinalizacionComponent } from './finalizacion/finalizacion.component';
+import { FinalComponent } from './final/final.component';
 import { LectorqrComponent } from './lectorqr/lectorqr.component';
 
 
@@ -17,7 +17,7 @@ import { LectorqrComponent } from './lectorqr/lectorqr.component';
     LoginComponent,
     EncuestaComponent,
     RecuperacionComponent,
-    FinalizacionComponent,
+    FinalComponent,
     LectorqrComponent
   ],
   imports: [
