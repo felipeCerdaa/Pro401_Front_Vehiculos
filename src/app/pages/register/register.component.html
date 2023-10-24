@@ -13,6 +13,7 @@
     </ion-card-header>
 
       <form [formGroup] ="registerForm" (submit)="submitForm()">
+
         <ion-input 
           label="Rut"
           type="text"
@@ -22,7 +23,9 @@
           errorText="El Rut es requerido y debe ser valido"
           placeholder="Ingrese su Rut">
         </ion-input>
+
         <br>
+
         <ion-input 
           label="Nombres"
           type="text"
@@ -32,7 +35,9 @@
           errorText="Ingresa tu nombre"
           placeholder="Ingresa tu nombre">
         </ion-input>
+
         <br>
+
         <ion-input 
           label="Apellidos"
           type="text"
@@ -42,7 +47,9 @@
           errorText="Ingresa tus Apellidos"
           placeholder="Ingresa tus Apellidos">
         </ion-input>
+
         <br>
+        
         <ion-input 
           label="Fecha Nacimiento"
           type="date"
@@ -52,18 +59,30 @@
           errorText="Ingresa tu Fecha de Nacimiento"
           placeholder="Ingresa tu Fecha de Nacimiento">
         </ion-input>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f8b1dcb950dce480dc579563524bae58c181ab1
         <br>
 
         <ion-list>
           <ion-item>
             <ion-select 
             aria-label="formatoTrabajo" 
+<<<<<<< HEAD
             placeholder="Formato Trabajo"
             fill="outline"
             formControlName="TipoTrabajoId">
               <ion-select-option value="1">Presencial</ion-select-option>
               <ion-select-option value="2">Mixto</ion-select-option>
               <ion-select-option value="3">Teletrabajo</ion-select-option>
+=======
+            placeholder="Selecciona tu formato de trabajo" 
+            fill="outline">
+              <ion-select-option value="presencial">Presencial</ion-select-option>
+              <ion-select-option value="teletrabjo">Teletrabajo</ion-select-option>
+              <ion-select-option value="mixto">Mixto</ion-select-option>
+>>>>>>> 5f8b1dcb950dce480dc579563524bae58c181ab1
             </ion-select>
           </ion-item>
         </ion-list>
@@ -75,9 +94,14 @@
             <ion-select
              aria-label="comunaResidencia" 
              placeholder="Ingresa tu Comuna de Residencia" 
+<<<<<<< HEAD
              fill="outline"
              formControlName="ComunaResidenciaId">
              <ion-select-option *ngFor="let item of comunas" value="{{item.id}}">{{item.nombre}}</ion-select-option>
+=======
+             fill="outline">
+                <ion-select-option *ngFor="let valor of listaComunas">{{valor}}</ion-select-option>
+>>>>>>> 5f8b1dcb950dce480dc579563524bae58c181ab1
             </ion-select>
           </ion-item>
         </ion-list>
@@ -87,36 +111,20 @@
             <ion-select 
             aria-label="Comuna de Trabajo" 
             placeholder="Ingresa tu Comuna de Trabajo" 
+<<<<<<< HEAD
             fill="outline"
             formControlName="ComunaTrabajoId">
               <ion-select-option *ngFor="let item of comunas" value="{{item.id}}">{{item.nombre}}</ion-select-option>
+=======
+            fill="outline">
+                <ion-select-option *ngFor="let valor of listaComunas">{{valor}}</ion-select-option>
+>>>>>>> 5f8b1dcb950dce480dc579563524bae58c181ab1
             </ion-select>
           </ion-item>
         </ion-list>
-
-        <!-- <ion-input 
-          label="Comuna de Trabajo"
-          type="text"
-          label-placement="floating" 
-          fill="outline" 
-          formControlName="comunaTrabajo"
-          errorText="Ingresa tu Comuna de Trabajo"
-          placeholder="Ingresa tu Comuna de Trabajo">
-        </ion-input> -->
-
+        
         <br>
 
-        <!-- <ion-input 
-          label="Comuna de Residencia"
-          type="text"
-          label-placement="floating" 
-          fill="outline" 
-          formControlName="comunaResidencia"
-          errorText="Ingresa tu Comuna de Residencia"
-          placeholder="Ingresa tu Comuna de Residencia">
-        </ion-input> -->
-
-        <br>
         <ion-input 
           label="Email"
           type="email"
@@ -126,7 +134,9 @@
           errorText="Email es requerido y debe ser valido"
           placeholder="Ingrese su Email">
         </ion-input>
+
         <br>
+
         <ion-input 
           label="Contraseña" 
           type="password"
@@ -136,7 +146,9 @@
           errorText="Contraseña es requerida, debe tener al menos 8 caracteres y debe contener al menos una letra mayúscula, una letra minúscula y un número"
           placeholder="Ingrese su Contraseña">
         </ion-input>
+
         <br>
+
         <ion-input 
           label="Repetir Contraseña" 
           type="password"
@@ -145,10 +157,12 @@
           formControlName="confirmPassword"
           errorText="Contraseña es requerida, debe tener al menos 8 caracteres y debe contener al menos una letra mayúscula, una letra minúscula y un número"
           placeholder="Repita su Contraseña">
-        </ion-input> 
+        </ion-input>
+
         <div *ngIf="registerForm.errors?.['passwordMismatch']">
           <ion-text color="danger">Las contraseñas no coinciden</ion-text>
         </div>
+
         <br>
         <ion-button
         type="submit"
