@@ -18,7 +18,7 @@
           type="text"
           label-placement="floating" 
           fill="outline" 
-          formControlName="rut"
+          formControlName="Run"
           errorText="El Rut es requerido y debe ser valido"
           placeholder="Ingrese su Rut">
         </ion-input>
@@ -28,7 +28,7 @@
           type="text"
           label-placement="floating" 
           fill="outline" 
-          formControlName="nombres"
+          formControlName="Nombres"
           errorText="Ingresa tu nombre"
           placeholder="Ingresa tu nombre">
         </ion-input>
@@ -38,7 +38,7 @@
           type="text"
           label-placement="floating" 
           fill="outline" 
-          formControlName="apellidos"
+          formControlName="Apellidos"
           errorText="Ingresa tus Apellidos"
           placeholder="Ingresa tus Apellidos">
         </ion-input>
@@ -48,28 +48,22 @@
           type="date"
           label-placement="floating" 
           fill="outline" 
-          formControlName="fechaNacimiento"
+          formControlName="FechaNacimiento"
           errorText="Ingresa tu Fecha de Nacimiento"
           placeholder="Ingresa tu Fecha de Nacimiento">
-        </ion-input>
-        <br>
-        <ion-input 
-          label="Ocupacion"
-          type="text"
-          label-placement="floating" 
-          fill="outline" 
-          formControlName="ocupacion"
-          errorText="Ingresa tu Ocupacion"
-          placeholder="Ingresa tu Ocupacion">
         </ion-input>
         <br>
 
         <ion-list>
           <ion-item>
-            <ion-select placeholder="Formato Trabajo">
-              <ion-select-option value="presencial">Presencial</ion-select-option>
-              <ion-select-option value="teletrabjo">Teletrabajo</ion-select-option>
-              <ion-select-option value="mixto">Mixto</ion-select-option>
+            <ion-select 
+            aria-label="formatoTrabajo" 
+            placeholder="Formato Trabajo"
+            fill="outline"
+            formControlName="TipoTrabajoId">
+              <ion-select-option value="1">Presencial</ion-select-option>
+              <ion-select-option value="2">Mixto</ion-select-option>
+              <ion-select-option value="3">Teletrabajo</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
@@ -81,8 +75,9 @@
             <ion-select
              aria-label="comunaResidencia" 
              placeholder="Ingresa tu Comuna de Residencia" 
-             fill="outline">
-             <ion-select-option *ngFor="let valor of listaComunas">{{valor}}</ion-select-option>
+             fill="outline"
+             formControlName="ComunaResidenciaId">
+             <ion-select-option *ngFor="let item of comunas" value="{{item.id}}">{{item.nombre}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
@@ -92,8 +87,9 @@
             <ion-select 
             aria-label="Comuna de Trabajo" 
             placeholder="Ingresa tu Comuna de Trabajo" 
-            fill="outline">
-              <ion-select-option *ngFor="let valor of listaComunas">{{valor}}</ion-select-option>
+            fill="outline"
+            formControlName="ComunaTrabajoId">
+              <ion-select-option *ngFor="let item of comunas" value="{{item.id}}">{{item.nombre}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
@@ -126,7 +122,7 @@
           type="email"
           label-placement="floating" 
           fill="outline" 
-          formControlName="email"
+          formControlName="Email"
           errorText="Email es requerido y debe ser valido"
           placeholder="Ingrese su Email">
         </ion-input>
@@ -136,7 +132,7 @@
           type="password"
           label-placement="floating" 
           fill="outline" 
-          formControlName="password"
+          formControlName="Password"
           errorText="Contraseña es requerida, debe tener al menos 8 caracteres y debe contener al menos una letra mayúscula, una letra minúscula y un número"
           placeholder="Ingrese su Contraseña">
         </ion-input>

@@ -12,7 +12,7 @@
       <ion-card-title>Preguntas</ion-card-title>
     </ion-card-header>
 
-      <form>
+    <form [formGroup] ="encuestaForm" (submit)="submitForm()">
 
         <ion-list>
           <ion-item>
@@ -20,6 +20,7 @@
              aria-label="Publico / Privado" 
              placeholder="Publico / Privado" 
              (ionChange)="handleChange($event)" 
+             formControlName="Publico_Privado"
              fill="outline">
              <ion-select-option value="publico">Publico</ion-select-option>
              <ion-select-option value="privadoSinCompartir">Privado Sin Compartir</ion-select-option>
@@ -33,9 +34,9 @@
         <ion-list>
           <ion-item>
             <ion-select
-			      [disabled]="medioTransporteDisabled" 
 			      aria-label="Medio de Transporte" 
 			      placeholder="Medio de Transporte" 
+            formControlName="MedioTransporte"
 			      fill="outline">
             <ion-select-option *ngFor="let valor of listaTransportes">{{valor}}</ion-select-option>
             </ion-select>
@@ -49,13 +50,18 @@
         label-placement="floating" 
         fill="outline"
         placeholder="0">
+        formControlName="KM"
         </ion-input>
 
         <br>
 
-        <ion-button expand="block">Enviar</ion-button>
+        <ion-button type="submit" expand="block">Enviar</ion-button>
 
         <br>
+
+        <ion-button
+        (click)="backToLogin()" 
+        expand="block">VOLVER</ion-button>
 
         <P>En caso de dudas contactar al 22-777 77 77</P>
 

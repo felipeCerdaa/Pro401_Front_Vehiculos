@@ -34,14 +34,17 @@ export class LoginComponent  implements OnInit {
     this.router.navigate(["recuperacion"]);
   }
   
-  
+  toQr(){
+    this.router.navigate(["/lectorqr"]);
+  }
+
   submitLoginForm(){
     console.log("SubmitLoginForm");
     this.accountService.loginUser(this.loginForm.value).subscribe({
       next : (resp : any) => {
         console.log(resp);
         localStorage.setItem("token", resp["token"]);
-        this.router.navigate(["/home/tabs/tab1"]);
+        this.router.navigate(["/encuesta"]);
       },
       error: async err => {
         console.log(err);
